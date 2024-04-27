@@ -1,55 +1,46 @@
-import Facebook from "/public/image/Facebook.png";
-import Instagram from "/public/image/Instagram.png";
-
-import mailLine from "/public/image/mailLine.png";
-import nextjs from "/public/image/nextjs.png";
-import python from "/public/image/Python-logo-notext.png";
-import sprinBoot from "/public/image/spring-boot-logo.png";
-import js from "/public/image/js.png";
-import react from "/public/image/React.png";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 type Skills = {
   name: string;
-  img: StaticImageData;
+  img: string;
   h: number;
   w: number;
 }[];
 type IconName = {
   name: string;
-  img: StaticImageData;
+  img: string;
   link: string;
 }[];
 export default function Home() {
   const skills: Skills = [
     {
       name: "react",
-      img: react,
+      img: "/React.png",
       h: 2300,
       w: 2000,
     },
     {
       name: "next",
-      img: nextjs,
+      img: "/nextjs.png",
       h: 1234,
       w: 2048,
     },
     {
       name: "springBoot",
-      img: sprinBoot,
+      img: '/spring-boot-logo.png',
       h: 315,
       w: 600,
     },
     {
       name: "python",
-      img: python,
+      img: "/Python-logo-notext.png",
       h: 2048,
       w: 1869,
     },
     {
       name: "js",
-      img: js,
+      img: "/js.png",
       h: 1080,
       w: 1080,
     },
@@ -57,15 +48,15 @@ export default function Home() {
   const iconName: IconName = [
     {
       name: "facebook",
-      img: Facebook,
+      img: '/Facebook.png',
       link: "https://www.facebook.com/shkar.deary",
     },
     {
       name: "instagram",
-      img: Instagram,
+      img: '/Instagram.png',
       link: "https://www.instagram.com/d4ro_diary/",
     },
-    { name: "mailLine", img: mailLine, link: "mailto:shkardeary4@gmail.com" },
+    { name: "mailLine", img: "/mailLine.png", link: "mailto:shkardeary4@gmail.com" },
   ];
   return (
     <main className="  ">
