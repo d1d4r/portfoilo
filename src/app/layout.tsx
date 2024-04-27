@@ -4,6 +4,7 @@ import "./globals.css";
 import Lines from "@/components/lines";
 import Nav from "@/components/nav";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
