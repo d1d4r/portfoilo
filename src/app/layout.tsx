@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Lines from "@/components/lines";
-import Nav from "@/components/nav";
+import Navigations from "@/components/Navigations";
+import Grid from "@/components/Grid";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,8 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} overflow-x-hidden`}>
-        <Lines />
-        <Nav />
+        <Grid />
+        <Navigations />
         {children}</body>
     </html>
   );
