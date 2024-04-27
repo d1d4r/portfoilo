@@ -1,113 +1,144 @@
-import Image from "next/image";
+import Facebook from "/public/image/Facebook.png";
+import Instagram from "/public/image/Instagram.png";
 
+import mailLine from "/public/image/mailLine.png";
+import nextjs from "/public/image/nextjs.png";
+import python from "/public/image/Python-logo-notext.png";
+import sprinBoot from "/public/image/spring-boot-logo.png";
+import js from "/public/image/js.png";
+import react from "/public/image/React.png";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+// import second from '../videos/se.mp4'
+// import NextVideo from "next-video";
+//import mosh from "@/videos/se"
+type Skills = {
+  name: string;
+  img: StaticImageData;
+  h: number;
+  w: number;
+}[];
+type IconName = {
+  name: string;
+  img: StaticImageData;
+  link: string;
+}[];
 export default function Home() {
+  const skills: Skills = [
+    {
+      name: "react",
+      img: react,
+      h: 2300,
+      w: 2000,
+    },
+    {
+      name: "next",
+      img: nextjs,
+      h: 1234,
+      w: 2048,
+    },
+    {
+      name: "springBoot",
+      img: sprinBoot,
+      h: 315,
+      w: 600,
+    },
+    {
+      name: "python",
+      img: python,
+      h: 2048,
+      w: 1869,
+    },
+    {
+      name: "js",
+      img: js,
+      h: 1080,
+      w: 1080,
+    },
+  ];
+  const iconName: IconName = [
+    {
+      name: "facebook",
+      img: Facebook,
+      link: "https://www.facebook.com/shkar.deary",
+    },
+    {
+      name: "instagram",
+      img: Instagram,
+      link: "https://www.instagram.com/d4ro_diary/",
+    },
+    { name: "mailLine", img: mailLine, link: "mailto:shkardeary4@gmail.com" },
+  ];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="  ">
+      <span className=" w-[30%] h-full bg-primary-200 absolute right-0 top-0 -z-20"></span>
+      <section className="md:h-[calc(100%-8rem)]  md:w-[70%] w-screen h-full mt-16 ">
+        <div className=" flex flex-col  justify-center items-center md:gap-4 gap-10 ">
+          <div>
+            <h3 className=" text-secondary-300 md:text-2xl text-lg ">
+              Shkar Diary
+            </h3>
+            <h1 className=" text-blue-950 md:text-6xl text-4xl md:leading-[4rem] leading-[3rem]  ">
+              <span>Graphic Designer</span> <br />
+              &Web Developer
+            </h1>
+          </div>
+
+          <div className=" md:w-[30rem] w-[18rem]  bg-gray-50 rounded-sm shadow-xl md:p-3 pb-5 px-3 text-center md:text-left ">
+            <div className=" flex justify-center items-center font-bold  w-10 h-10 rounded-full md:shadow-[0_0px_75px_5px_rgb(0,0,0,0.3)] shadow-[0_0px_75px_1px_rgb(0,0,0,0.3)] bg-white relative top-[-22px] left-[-22px]  ">
+              <span className=" text-3xl overflow-hidden leading-none relative top-[0.4rem]  ">
+                &quot;
+              </span>
+            </div>
+            <p className="text-xl text-gray-600  ">
+              Web Developer & Graphic Designer Blending code and creativity to
+              build engaging digital experiences. Responsive websites,
+              user-centric interfaces, and visual storytelling. Transforming
+              ideas into interactive and aesthetic realities. ✨
+            </p>
+          </div>
         </div>
-      </div>
+        <div className=" flex md:gap-3 md:flex-col md:px-28 md:m-0 mt-12 justify-evenly md:relative md:bottom-24 ">
+          {iconName.map((icon) => (
+            <Link
+              href={icon.link}
+              key={icon.name}
+              title={icon.name}
+              target="_blank"
+            >
+              <Image
+                className="size-10"
+                src={icon.img}
+                width={24}
+                height={24}
+                alt={`this is ${icon.name} icon`}
+              />
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="mt-8 pt-8 bg-white h-screen ">
+        <div className="flex  justify-evenly ">
+          {skills.map((skills) => (
+            <Image
+              className="size-10"
+              key={skills.name}
+              src={skills.img}
+              width={skills.w}
+              height={skills.h}
+              alt={`this is ${skills.name} image`}
+            />
+          ))}
+        </div>
+        <div className=" flex justify-center mt-16  ">
+          <video width="700" height="240" controls>
+            <source src='/se.mp4' type="video/mp4" />
+            Error Message
+          </video>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }
