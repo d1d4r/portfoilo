@@ -1,3 +1,4 @@
+import React from "react";
 export default function Navigations() {
     return (
         <div className=" hidden md:flex col-start-1 row-start-1 mt-4 h-28 w-[70%] items-center  px-28 justify-between bg-transparent ">

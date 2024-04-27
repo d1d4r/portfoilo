@@ -1,4 +1,4 @@
-
+import React from "react";
 export default function Grid() {
     return (
         <div className="h-dvh w-screen flex justify-evenly bg-transparent absolute top-0 -z-10 ">

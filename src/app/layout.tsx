@@ -23,7 +23,8 @@ export default function RootLayout({
       <body className={`${inter.className} overflow-x-hidden`}>
         <Grid />
         <Navigations />
-        {children}</body>
+        {children}
+      </body>
     </html>
   );
 }
