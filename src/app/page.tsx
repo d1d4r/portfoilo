@@ -9,9 +9,7 @@ import js from "/public/image/js.png";
 import react from "/public/image/React.png";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-// import second from '../videos/se.mp4'
-// import NextVideo from "next-video";
-//import mosh from "@/videos/se"
+
 type Skills = {
   name: string;
   img: StaticImageData;
